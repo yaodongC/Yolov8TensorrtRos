@@ -116,7 +116,7 @@ sudo apt-get install libprotobuf-dev protobuf-compiler
 sudo apt-get install libgoogle-glog-dev libgflags-dev
 sudo apt-get install libgphoto2-dev libeigen3-dev libhdf5-dev doxygen
 sudo apt-get install libgl1-mesa-dev libglu1-mesa-dev freeglut3-dev
-sudo apt-get install ocl-icd-opencl-dev
+sudo apt-get install ocl-icd-opencl-dev libgtkglext1-dev libgtkglext1
 
 ```
 Download the OpenCV 4.5.2 and contrib from [OpenCV Archive](https://opencv.org/releases/)
@@ -187,7 +187,7 @@ cmake command for jetson orin, specify the opencl path and library
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
         -D CMAKE_CXX_FLAGS_RELEASE="-O3" \
         -D CMAKE_INSTALL_PREFIX=/usr/local \
-        -D OPENCV_EXTRA_MODULES_PATH=/home/jetson/Downloads/opencv/opencv_contrib-4.5.4/modules \
+        -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-4.5.4/modules \
         -D OPENCL_INCLUDE_DIR=/usr/include \
         -D OPENCL_LIBRARY=/usr/lib/aarch64-linux-gnu/libOpenCL.so.1 \
         -D BUILD_TIFF=ON \
@@ -214,7 +214,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
         -D PYTHON3_EXECUTABLE=/usr/bin/python3 \
         -D PYTHON_INCLUDE_DIR=/usr/include/python3.8 \
         -D PYTHON_LIBRARY=/usr/lib/libpython3.8.so \
-        -D PYTHON3_NUMPY_INCLUDE_DIRS=/home/jetson/.local/lib/python3.8/site-packages/numpy/core/include \
+        -D PYTHON3_NUMPY_INCLUDE_DIRS=~/.local/lib/python3.8/site-packages/numpy/core/include \
         -D BUILD_OPENCV_PYTHON3=ON \
         -D INSTALL_PYTHON_EXAMPLES=ON \
         -D BUILD_NEW_PYTHON_SUPPORT=ON \
